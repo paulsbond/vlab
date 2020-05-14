@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  background-image: url("assets/images/lab.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  line-height: 200px;
+  font-weight: bold;
+  font-size: 4em;
+}
+
+section {
+  padding: 20px;
+}
+
+.samples .sample {
+  background-color: white;
+  border: 2px solid rgba(#fff, 0);
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.samples .sample.selected {
+  border: 2px #aaa dashed;
+}
+
+.samples .sample img {
+  height: 200px;
+}
+
+.samples .sample .label {
+  background-color: rgba($color: white, $alpha: 0.5);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button.action {
+  border: none;
+  font-size: 1.1em;
+  margin: 0 2px;
+  padding: 20px 30px;
+  text-decoration: none;
+}
+
+button.action.selected {
+  background-color: #4caf50;
+  color: #fff;
+  outline: 0;
+}
