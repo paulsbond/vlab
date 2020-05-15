@@ -20,6 +20,22 @@ export class AppComponent {
     'UV-Vis Spectroscopy',
   ];
   selectedAction: string;
+  chart = {
+    type: 'LineChart',
+    columnNames: ['Seconds', 'Voltage'],
+    options: {},
+    data: [
+      [1, 0],
+      [2, 1],
+      [3, 2],
+      [4, 4],
+      [5, 9],
+      [6, 4],
+      [7, 2],
+      [8, 1],
+      [9, 0],
+    ],
+  };
 
   constructor() {}
   ngOnInit() {}

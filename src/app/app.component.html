@@ -20,7 +20,7 @@
   </p>
 </section>
 
-<section *ngIf="selectedSample">
+<div class="actions">
   <button
     class="action"
     *ngFor="let action of actions"
@@ -29,4 +29,11 @@
   >
     {{ action }}
   </button>
-</section>
+</div>
+
+<google-chart
+  [type]="chart.type"
+  [columnNames]="chart.columnNames"
+  [options]="chart.options"
+  [data]="chart.data"
+></google-chart>
