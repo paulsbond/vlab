@@ -4,73 +4,13 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
   color: #333;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
 }
 
-h1 {
-  background-image: url("assets/images/lab.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 200px;
-  line-height: 200px;
-  font-weight: bold;
-  font-size: 4em;
-}
-
-section {
-  padding: 20px;
-}
-
-.samples .sample {
-  background-color: white;
-  border: 2px solid rgba(#fff, 0);
-  cursor: pointer;
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
-  position: relative;
-  vertical-align: top;
-}
-
-.samples .sample.selected {
-  border: 2px #aaa dashed;
-}
-
-.samples .sample img {
-  height: 200px;
-}
-
-.samples .sample .label {
-  background-color: rgba($color: white, $alpha: 0.5);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.samples .details {
-  margin-top: 20px;
-}
-
-.actions {
-  margin-bottom: 20px;
-}
-
-button.action {
-  background-color: #eee;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1em;
-  margin: 5px;
-  padding: 20px 30px;
-  text-decoration: none;
-}
-
-button.action.selected {
-  background-color: #4caf50;
-  color: #fff;
-  outline: 0;
+button {
+  color: inherit;
+  font-size: inherit;
+  padding: 0.2em 0.5em;
 }

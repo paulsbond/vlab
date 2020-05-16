@@ -9,14 +9,11 @@
     (click)="selectSample(sample)"
   >
     <img src="assets/images/vial.png" />
-    <div class="label">
-      {{ sample.label }}<br />
-      {{ sample.conc }}
-    </div>
+    <div class="label">Ethanol<br />{{ sample.percentage }}%</div>
   </button>
   <p class="details" *ngIf="selectedSample">
-    <b>Label:</b> {{ selectedSample.label }}<br />
-    <b>Concentation:</b> {{ selectedSample.conc }}
+    <b>Chemical:</b> Ethanol<br />
+    <b>Concentation:</b> {{ selectedSample.percentage }}%
   </p>
 </section>
 
@@ -31,9 +28,7 @@
   </button>
 </div>
 
-<google-chart
-  [type]="chart.type"
-  [columnNames]="chart.columnNames"
-  [options]="chart.options"
-  [data]="chart.data"
-></google-chart>
+<app-gc
+  *ngIf="selectedAction === 'Gas Chromatography'"
+  [sample]="selectedSample"
+></app-gc>
