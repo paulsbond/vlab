@@ -16,7 +16,7 @@ export class GcComponent implements OnInit {
   x = 0;
 
   options = {
-    chartArea: { top: 20, width: '85%', height: '85%' },
+    chartArea: { top: 20, height: '80%', width: '80%' },
     enableInteractivity: false,
     hAxis: {
       title: 'Time / s',
