@@ -1,11 +1,13 @@
 <section>
-  <button (click)="inject()">Inject</button>
+  <button (click)="inject()" [disabled]="state.gc.running">Inject</button>
+  <button (click)="stop()" [disabled]="!state.gc.running">Stop</button>
+
   <google-chart
     class="chart"
-    [type]="type"
-    [data]="data"
-    [columns]="columns"
-    [options]="options"
+    [type]="state.gc.chart.type"
+    [data]="state.gc.chart.data"
+    [columns]="state.gc.chart.columns"
+    [options]="state.gc.chart.options"
   >
   </google-chart>
 </section>

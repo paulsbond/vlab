@@ -4,31 +4,28 @@
   <h2>Samples</h2>
   <button
     class="sample"
-    *ngFor="let sample of samples"
-    [class.selected]="sample === selectedSample"
-    (click)="selectSample(sample)"
+    *ngFor="let sample of state.samples"
+    [class.selected]="sample === state.selectedSample"
+    (click)="state.selectSample(sample)"
   >
     <img src="assets/images/vial.png" />
     <div class="label">Ethanol<br />{{ sample.percentage }}%</div>
   </button>
-  <p class="details" *ngIf="selectedSample">
+  <p class="details" *ngIf="state.selectedSample">
     <b>Chemical:</b> Ethanol<br />
-    <b>Concentation:</b> {{ selectedSample.percentage }}%
+    <b>Concentation:</b> {{ state.selectedSample.percentage }}%
   </p>
 </section>
 
 <div class="actions">
   <button
     class="action"
-    *ngFor="let action of actions"
-    [class.selected]="action == selectedAction"
-    (click)="selectAction(action)"
+    *ngFor="let action of state.actions"
+    [class.selected]="action == state.selectedAction"
+    (click)="state.selectAction(action)"
   >
     {{ action }}
   </button>
 </div>
 
-<app-gc
-  *ngIf="selectedAction === 'Gas Chromatography'"
-  [sample]="selectedSample"
-></app-gc>
+<app-gc *ngIf="state.selectedAction === 'Gas Chromatography'"></app-gc>
