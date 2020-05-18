@@ -12,7 +12,4 @@ export class GcComponent implements OnInit {
   inject(): void {
     this.state.gc.inject(this.state.selectedSample);
   }
-  stop(): void {
-    this.state.gc.stop();
-  }
 }

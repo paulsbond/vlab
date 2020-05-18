@@ -6,11 +6,40 @@
 body {
   color: #333;
   font-family: "Open Sans", sans-serif;
+  padding-bottom: 50px;
   text-align: center;
+}
+
+section {
+  padding: 20px;
 }
 
 button {
   color: inherit;
   font-size: inherit;
   padding: 0.2em 0.5em;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+table th,
+table td {
+  border: 1px solid #bbb;
+  padding: 0.3em 0.5em;
+}
+
+table th {
+  background-color: #ddd;
+  font-weight: normal;
+}
+
+th.right,
+td.right {
+  text-align: right;
 }
