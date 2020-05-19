@@ -5,9 +5,10 @@ import { GoogleChartsModule } from 'angular-google-charts';
 
 import { AppComponent } from './app.component';
 import { GcComponent } from './gc/gc.component';
+import { DilutionComponent } from './dilution/dilution.component';
 
 @NgModule({
-  declarations: [AppComponent, GcComponent],
+  declarations: [AppComponent, GcComponent, DilutionComponent],
   imports: [BrowserModule, FormsModule, GoogleChartsModule],
   providers: [],
   bootstrap: [AppComponent],

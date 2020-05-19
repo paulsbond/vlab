@@ -9,11 +9,11 @@
     (click)="state.selectSample(sample)"
   >
     <img src="assets/images/vial.png" />
-    <div class="label">Ethanol<br />{{ sample.percentage }}%</div>
+    <div class="label">{{ sample.label }}</div>
   </button>
   <p class="details" *ngIf="state.selectedSample">
-    <b>Chemical:</b> Ethanol<br />
-    <b>Concentation:</b> {{ state.selectedSample.percentage }}%
+    <b>Label:</b> {{ state.selectedSample.label }}<br />
+    <b>Concentration:</b> {{ state.selectedSample.percentage }}%<br />
   </p>
 </section>
 
@@ -29,3 +29,4 @@
 </div>
 
 <app-gc *ngIf="state.selectedAction === 'Gas Chromatography'"></app-gc>
+<app-dilution *ngIf="state.selectedAction === 'Dilution'"></app-dilution>

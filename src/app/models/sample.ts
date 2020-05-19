@@ -1,3 +1,3 @@
-export interface Sample {
-  percentage: number;
+export class Sample {
+  constructor(public label: string, public percentage: number) {}
 }
