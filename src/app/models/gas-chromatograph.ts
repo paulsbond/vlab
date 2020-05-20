@@ -1,6 +1,7 @@
 import { Chart } from './chart';
 import { Gaussian } from './gaussian';
 import { Sample } from './sample';
+import { random } from './utils';
 
 export class GasChromatograph {
   private _max_voltage: number = 1000;
@@ -18,10 +19,10 @@ export class GasChromatograph {
 
   inject(sample: Sample): void {
     if (this._running) return;
-    const height = (sample.percentage * 1000) / 5.2;
+    const height = ((sample.percentage * 1000) / 5.2) * random(0.995, 1.005);
     const cut_height = Math.min(height, this._max_voltage);
-    const position = 120;
-    const sd = 20;
+    const position = 120 * random(0.995, 1.005);
+    const sd = 20 * random(0.995, 1.005);
     const gaussian = new Gaussian(height, position, sd);
     let area = 0;
     let time = 0;
