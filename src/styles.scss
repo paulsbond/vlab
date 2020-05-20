@@ -63,15 +63,6 @@ select {
   width: 100%;
 }
 
-.ng-valid[required],
-.ng-valid.required {
-  border-left: 5px solid #42a948;
-}
-
-.ng-invalid:not(form) {
-  border-left: 5px solid #a94442;
-}
-
 form button {
   background-color: #4caf50;
   border-radius: 4px;
@@ -82,11 +73,11 @@ form button {
   width: 100%;
 }
 
+form button[disabled] {
+  background-color: #ca6666;
+}
+
 form button:not([disabled]):hover {
   background-color: #45a049;
   cursor: pointer;
-}
-
-form span.error {
-  color: #ff1a1a;
 }

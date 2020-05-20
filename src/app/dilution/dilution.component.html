@@ -19,7 +19,6 @@
       placeholder="Volume"
       [(ngModel)]="state.dilution.volume"
       required
-      (change)="volume_change()"
     />
     <label for="flask">Volumetric Flask</label>
     <select id="flask" name="flask" [(ngModel)]="state.dilution.flask" required>
@@ -27,6 +26,8 @@
         {{ flask.name }}
       </option>
     </select>
-    <button type="submit" [disabled]="!dilutionForm.form.valid">Dilute</button>
+    <button type="submit" [disabled]="error">
+      {{ error || "Dilute" }}
+    </button>
   </form>
 </section>
