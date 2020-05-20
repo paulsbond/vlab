@@ -23,8 +23,8 @@
         <th>Compound Name</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngIf="state.gc.result">
+    <tbody *ngIf="state.gc.result">
+      <tr>
         <td>1</td>
         <td class="right">
           {{ state.gc.result.retention_time | number }}
