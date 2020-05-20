@@ -30,7 +30,9 @@ export class GasChromatograph {
     this._running = true;
     this.result = undefined;
     const interval = setInterval(() => {
-      const voltage = Math.min(gaussian.y(time), this._max_voltage);
+      let voltage = gaussian.y(time);
+      voltage += random(-5, 5);
+      voltage = Math.min(voltage, this._max_voltage);
       area += voltage;
       this.chart.add_point(time, voltage);
       time++;
