@@ -23,8 +23,8 @@
         <th>Compound Name</th>
       </tr>
     </thead>
-    <tbody *ngIf="state.gc.result">
-      <tr>
+    <tbody>
+      <tr *ngIf="state.gc.result">
         <td>1</td>
         <td class="right">
           {{ state.gc.result.retention_time | number }}
@@ -36,13 +36,16 @@
         <td class="right">{{ state.gc.result.fwhm | number }}</td>
         <td></td>
       </tr>
+      <tr *ngIf="!state.gc.result">
+        <td colspan="8">No peaks</td>
+      </tr>
       <tr>
         <td></td>
         <td>Total</td>
-        <td class="right">{{ state.gc.result.area | number }}</td>
-        <td class="right">{{ state.gc.result.height | number }}</td>
-        <td class="right">100.0</td>
-        <td class="right">100.0</td>
+        <td class="right">{{ state.gc.result?.area | number }}</td>
+        <td class="right">{{ state.gc.result?.height | number }}</td>
+        <td class="right">{{ state.gc.result ? "100.0" : "" }}</td>
+        <td class="right">{{ state.gc.result ? "100.0" : "" }}</td>
         <td></td>
         <td></td>
       </tr>

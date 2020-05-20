@@ -26,7 +26,7 @@ export class Chart {
     ylabel: string,
     xmax: number,
     ymax: number,
-    private min_ymax: number = 1
+    private min_ymax: number
   ) {
     this.options.hAxis.title = xlabel;
     this.options.vAxis.title = ylabel;

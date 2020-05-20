@@ -4,11 +4,12 @@ import { Sample } from './sample';
 import { random } from './utils';
 
 export class GasChromatograph {
+  private _min_voltage: number = 50;
   private _max_voltage: number = 1000;
   private _runtime: number = 180;
   private _running: boolean = false;
 
-  public chart: Chart = new Chart('Time / s', 'Voltage / mV', 180, 1000);
+  public chart: Chart = new Chart('Time / s', 'Voltage / mV', 180, 1000, 1000);
   public result: Result;
 
   public get running(): boolean {
@@ -27,6 +28,7 @@ export class GasChromatograph {
     let area = 0;
     let time = 0;
     this._running = true;
+    this.result = undefined;
     const interval = setInterval(() => {
       const voltage = Math.min(gaussian.y(time), this._max_voltage);
       area += voltage;
@@ -35,12 +37,14 @@ export class GasChromatograph {
       if (time > this._runtime) {
         this._running = false;
         clearInterval(interval);
-        this.result = {
-          retention_time: position,
-          area: area,
-          height: cut_height,
-          fwhm: gaussian.width(cut_height / 2),
-        };
+        if (height > this._min_voltage) {
+          this.result = {
+            retention_time: position,
+            area: area,
+            height: cut_height,
+            fwhm: gaussian.width(cut_height / 2),
+          };
+        }
       }
     }, 10);
   }
