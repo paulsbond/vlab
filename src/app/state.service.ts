@@ -8,7 +8,11 @@ import { Sample } from './models/sample';
   providedIn: 'root',
 })
 export class StateService {
-  samples: Sample[] = [new Sample('Ethanol 100%', 100, true)];
+  samples: Sample[] = [
+    new Sample('Ethanol 100%', 100, true),
+    new Sample('Unknown 1', 1.35, true),
+    new Sample('Unknown 2', 4.27, true),
+  ];
   selectedSample = this.samples[0];
   actions = ['Dilution', 'Gas Chromatography'];
   selectedAction = 'Dilution';
