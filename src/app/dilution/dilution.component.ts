@@ -19,5 +19,6 @@ export class DilutionComponent implements OnInit {
   dilute(): void {
     const new_sample = this.state.dilution.dilute(this.state.selectedSample);
     this.state.samples.push(new_sample);
+    this.state.dilution.label = '';
   }
 }
