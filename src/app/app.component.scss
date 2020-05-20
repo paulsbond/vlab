@@ -14,7 +14,7 @@ h1 {
   border: 2px solid rgba(#fff, 0);
   cursor: pointer;
   display: inline-block;
-  margin: 10px;
+  margin: 0px 10px 20px 10px;
   padding: 10px;
   position: relative;
   vertical-align: top;
@@ -35,10 +35,6 @@ h1 {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-
-.samples .details {
-  margin-top: 20px;
 }
 
 button.action {

@@ -1,7 +1,6 @@
 <h1>V-Lab</h1>
 
 <section class="samples">
-  <h2>Samples</h2>
   <button
     class="sample"
     *ngFor="let sample of state.samples"
@@ -11,10 +10,17 @@
     <img src="assets/images/vial.png" />
     <div class="label">{{ sample.label }}</div>
   </button>
-  <p class="details" *ngIf="state.selectedSample">
-    <b>Label:</b> {{ state.selectedSample.label }}<br />
-    <b>Concentration:</b> {{ state.selectedSample.percentage }}%<br />
+  <p *ngIf="state.selectedSample.supplied">
+    <b>Label:</b> {{ state.selectedSample.label }}
   </p>
+  <form>
+    <input
+      name="label"
+      placeholder="Label"
+      *ngIf="!state.selectedSample.supplied"
+      [(ngModel)]="state.selectedSample.label"
+    />
+  </form>
 </section>
 
 <div class="actions">
