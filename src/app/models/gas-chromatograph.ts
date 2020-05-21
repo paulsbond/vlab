@@ -9,7 +9,14 @@ export class GasChromatograph {
   private _runtime: number = 180;
   private _running: boolean = false;
 
-  public chart: Chart = new Chart('Time / s', 'Voltage / mV', 180, 1000, 1000);
+  public chart: Chart = new Chart(
+    'Time / s',
+    'Voltage / mV',
+    0,
+    180,
+    -20,
+    1020
+  );
   public result: Result;
 
   public get running(): boolean {
@@ -31,7 +38,7 @@ export class GasChromatograph {
     this.result = undefined;
     const interval = setInterval(() => {
       let voltage = gaussian.y(time);
-      voltage += random(-5, 5);
+      voltage += random(-2, 2);
       voltage = Math.min(voltage, this._max_voltage);
       area += voltage;
       this.chart.add_point(time, voltage);

@@ -6,42 +6,42 @@ export class Chart {
     chartArea: { top: 20, height: '80%', width: '80%' },
     enableInteractivity: false,
     hAxis: {
+      format: '#',
       title: 'X',
       titleTextStyle: { italic: false },
-      maxValue: 1,
-      format: '#',
+      viewWindow: { min: undefined, max: undefined },
     },
     height: 400,
     legend: 'none',
     vAxis: {
+      format: '#',
       title: 'Y',
       titleTextStyle: { italic: false },
-      maxValue: 1,
-      format: '#',
+      viewWindow: { min: undefined, max: undefined },
     },
   };
 
   constructor(
     xlabel: string,
     ylabel: string,
+    xmin: number,
     xmax: number,
-    ymax: number,
-    private min_ymax: number
+    ymin: number,
+    ymax: number
   ) {
     this.options.hAxis.title = xlabel;
     this.options.vAxis.title = ylabel;
-    this.options.hAxis.maxValue = xmax;
-    this.options.vAxis.maxValue = ymax;
+    this.options.hAxis.viewWindow.min = xmin;
+    this.options.hAxis.viewWindow.max = xmax;
+    this.options.vAxis.viewWindow.min = ymin;
+    this.options.vAxis.viewWindow.max = ymax;
   }
 
   add_point(x: number, y: number) {
     if (x === 0) {
-      this.options.vAxis.maxValue = this.min_ymax;
       this.data = [[x, y]];
     } else {
       this.data = [...this.data, [x, y]];
     }
-    this.options.vAxis.maxValue = Math.max(y, this.options.vAxis.maxValue);
-    this.options = { ...this.options };
   }
 }
