@@ -6,6 +6,7 @@ export class Sample {
   constructor(
     public label: string,
     public percentage: number,
-    public supplied: boolean = false
+    public supplied: boolean = false,
+    public image: string = 'vial.png'
   ) {}
 }

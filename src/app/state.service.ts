@@ -8,7 +8,7 @@ import { Sample } from './models/sample';
 })
 export class StateService {
   samples: Sample[] = [
-    new Sample('Ethanol 100%', 100, true),
+    new Sample('Ethanol (100%)', 100, true, 'ethanol.png'),
     new Sample('Unknown 1', 1.35, true),
     new Sample('Unknown 2', 4.27, true),
   ];
