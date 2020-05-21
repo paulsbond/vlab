@@ -3,15 +3,23 @@
   margin: 0;
 }
 
+html {
+  background-image: url("assets/images/bg.png");
+  background-repeat: repeat;
+}
+
 body {
+  background-color: white;
   color: #333;
   font-family: "Open Sans", sans-serif;
+  margin: 0 auto;
+  max-width: 1000px;
   padding-bottom: 50px;
   text-align: center;
 }
 
 section {
-  padding: 20px;
+  margin-bottom: 20px;
 }
 
 button {

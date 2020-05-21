@@ -1,6 +1,6 @@
 <h1>V-Lab</h1>
 
-<section class="samples">
+<div class="samples">
   <button
     class="sample"
     *ngFor="let sample of state.samples"
@@ -8,22 +8,16 @@
     (click)="state.selectSample(sample)"
   >
     <img src="assets/images/vial.png" />
-    <div class="label">{{ sample.label }}</div>
+    <span
+      class="label"
+      [contenteditable]="!sample.supplied"
+      [(ngModel)]="sample.label"
+    ></span>
   </button>
-  <p *ngIf="state.selectedSample.supplied">
-    <b>Label:</b> {{ state.selectedSample.label }}
-  </p>
-  <form>
-    <input
-      name="label"
-      placeholder="Label"
-      *ngIf="!state.selectedSample.supplied"
-      [(ngModel)]="state.selectedSample.label"
-    />
-  </form>
-</section>
+</div>
+<section><b>Label:</b> {{ state.selectedSample.label }}</section>
 
-<div class="actions">
+<section class="actions">
   <button
     class="action"
     *ngFor="let action of state.actions"
@@ -32,7 +26,7 @@
   >
     {{ action }}
   </button>
-</div>
+</section>
 
 <app-gc
   [gc]="state.selectedSample.gc"
