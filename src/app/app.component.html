@@ -34,5 +34,8 @@
   </button>
 </div>
 
-<app-gc *ngIf="state.selectedAction === 'Gas Chromatography'"></app-gc>
+<app-gc
+  [gc]="state.selectedSample.gc"
+  *ngIf="state.selectedAction === 'Gas Chromatography'"
+></app-gc>
 <app-dilution *ngIf="state.selectedAction === 'Dilution'"></app-dilution>

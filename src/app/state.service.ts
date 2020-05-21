@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Dilution } from './models/dilution';
 import { Flask } from './models/flask';
-import { GasChromatograph } from './models/gas-chromatograph';
 import { Sample } from './models/sample';
 
 @Injectable({
@@ -24,7 +23,6 @@ export class StateService {
     { name: '100 ml', volume: 100 },
     { name: '250 ml', volume: 250 },
   ];
-  gc = new GasChromatograph();
   dilution = new Dilution('', 0.1, this.flasks[0]);
 
   constructor() {}

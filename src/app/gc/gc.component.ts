@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { StateService } from '../state.service';
+import { GasChromatograph } from '../models/gas-chromatograph';
 
 @Component({
   selector: 'app-gc',
@@ -7,9 +8,10 @@ import { StateService } from '../state.service';
   styleUrls: ['./gc.component.scss'],
 })
 export class GcComponent implements OnInit {
+  @Input() gc: GasChromatograph;
   constructor(public state: StateService) {}
   ngOnInit(): void {}
   inject(): void {
-    this.state.gc.inject(this.state.selectedSample);
+    this.gc.inject(this.state.selectedSample);
   }
 }

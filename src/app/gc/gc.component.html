@@ -1,12 +1,12 @@
 <section>
-  <button (click)="inject()" [disabled]="state.gc.running">Inject</button>
+  <button (click)="inject()" [disabled]="gc.running">Inject</button>
 
   <google-chart
     class="chart"
-    [type]="state.gc.chart.type"
-    [data]="state.gc.chart.data"
-    [columns]="state.gc.chart.columns"
-    [options]="state.gc.chart.options"
+    [type]="gc.chart.type"
+    [data]="gc.chart.data"
+    [columns]="gc.chart.columns"
+    [options]="gc.chart.options"
   >
   </google-chart>
 
@@ -24,28 +24,28 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngIf="state.gc.result">
+      <tr *ngIf="gc.result">
         <td>1</td>
         <td class="right">
-          {{ state.gc.result.retention_time | number }}
+          {{ gc.result.retention_time | number }}
         </td>
-        <td class="right">{{ state.gc.result.area | number }}</td>
-        <td class="right">{{ state.gc.result.height | number }}</td>
+        <td class="right">{{ gc.result.area | number }}</td>
+        <td class="right">{{ gc.result.height | number }}</td>
         <td class="right">100.0</td>
         <td class="right">100.0</td>
-        <td class="right">{{ state.gc.result.fwhm | number }}</td>
+        <td class="right">{{ gc.result.fwhm | number }}</td>
         <td></td>
       </tr>
-      <tr *ngIf="!state.gc.result">
+      <tr *ngIf="!gc.result">
         <td colspan="8">No peaks</td>
       </tr>
       <tr>
         <td></td>
         <td>Total</td>
-        <td class="right">{{ state.gc.result?.area | number }}</td>
-        <td class="right">{{ state.gc.result?.height | number }}</td>
-        <td class="right">{{ state.gc.result ? "100.0" : "" }}</td>
-        <td class="right">{{ state.gc.result ? "100.0" : "" }}</td>
+        <td class="right">{{ gc.result?.area | number }}</td>
+        <td class="right">{{ gc.result?.height | number }}</td>
+        <td class="right">{{ gc.result ? "100.0" : "" }}</td>
+        <td class="right">{{ gc.result ? "100.0" : "" }}</td>
         <td></td>
         <td></td>
       </tr>
