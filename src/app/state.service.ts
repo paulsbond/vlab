@@ -9,17 +9,17 @@ export class StateService {
   experiments = {
     alcohol: new Experiment(
       [
-        new Sample('Ethanol (100%)', 100, true, 'ethanol.png'),
-        new Sample('Unknown 1', 1.35, true),
-        new Sample('Unknown 2', 4.27, true),
+        new Sample('Ethanol (100%)', 'ethanol', 100, true, 'ethanol.png'),
+        new Sample('Unknown 1', 'ethanol', 1.35, true),
+        new Sample('Unknown 2', 'ethanol', 4.27, true),
       ],
       ['Dilution', 'Gas Chromatography']
     ),
     caffeine: new Experiment(
       [
-        new Sample('Caffeine (100 mg/mL)', 100, true),
-        new Sample('Tea', 20, true),
-        new Sample('Coffee', 60, true),
+        new Sample('Caffeine (100 mg/mL)', 'caffeine', 100, true),
+        new Sample('Tea', 'caffeine', 20, true),
+        new Sample('Coffee', 'caffeine', 60, true),
       ],
       ['Dilution', 'HPLC']
     ),

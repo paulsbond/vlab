@@ -1,0 +1,52 @@
+<button (click)="inject()" [disabled]="sample.hplc.running">Inject</button>
+
+<google-chart
+  class="chart"
+  [type]="sample.hplc.chart.type"
+  [data]="sample.hplc.chart.data"
+  [columns]="sample.hplc.chart.columns"
+  [options]="sample.hplc.chart.options"
+>
+</google-chart>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Reten. Time<br />[sec]</th>
+      <th>Area<br />[mV.s]</th>
+      <th>Height<br />[mV]</th>
+      <th>Area<br />[%]</th>
+      <th>Height<br />[%]</th>
+      <th>W05<br />[sec]</th>
+      <th>Compound Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="sample.hplc.result">
+      <td>1</td>
+      <td class="right">
+        {{ sample.hplc.result.retention_time | number }}
+      </td>
+      <td class="right">{{ sample.hplc.result.area | number }}</td>
+      <td class="right">{{ sample.hplc.result.height | number }}</td>
+      <td class="right">100.0</td>
+      <td class="right">100.0</td>
+      <td class="right">{{ sample.hplc.result.fwhm | number }}</td>
+      <td></td>
+    </tr>
+    <tr *ngIf="!sample.hplc.result">
+      <td colspan="8">No peaks</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Total</td>
+      <td class="right">{{ sample.hplc.result?.area | number }}</td>
+      <td class="right">{{ sample.hplc.result?.height | number }}</td>
+      <td class="right">{{ sample.hplc.result ? "100.0" : "" }}</td>
+      <td class="right">{{ sample.hplc.result ? "100.0" : "" }}</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

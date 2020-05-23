@@ -10,6 +10,7 @@ import { DilutionComponent } from './dilution/dilution.component';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
 import { GcComponent } from './gc/gc.component';
+import { HplcComponent } from './hplc/hplc.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { GcComponent } from './gc/gc.component';
     ExperimentComponent,
     ExperimentsComponent,
     GcComponent,
+    HplcComponent,
   ],
   imports: [
     AppRoutingModule,

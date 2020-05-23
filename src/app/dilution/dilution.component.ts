@@ -55,8 +55,8 @@ export class DilutionComponent implements OnInit {
   dilute(): void {
     const sample_volume = this.volume * random(0.99, 1.01);
     const total_volume = this.flask.volume + random(-0.1, 0.1);
-    const percentage = this.sample.percentage * (sample_volume / total_volume);
-    const new_sample = new Sample(this.label, percentage);
+    const conc = this.sample.conc * (sample_volume / total_volume);
+    const new_sample = new Sample(this.label, this.sample.compound, conc);
     this.label = '';
     this.diluted.emit(new_sample);
   }

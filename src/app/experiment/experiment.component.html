@@ -36,4 +36,8 @@
     *ngIf="experiment.selectedAction === 'Gas Chromatography'"
     [sample]="experiment.selectedSample"
   ></app-gc>
+  <app-hplc
+    *ngIf="experiment.selectedAction === 'HPLC'"
+    [sample]="experiment.selectedSample"
+  ></app-hplc>
 </section>
