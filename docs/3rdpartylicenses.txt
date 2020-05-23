@@ -35,6 +35,12 @@ MIT
 @angular/platform-browser
 MIT
 
+@angular/router
+MIT
+
+@ng-stack/contenteditable
+MIT
+
 angular-google-charts
 MIT
 
