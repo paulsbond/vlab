@@ -1,9 +1,9 @@
 <div class="samples">
   <button
     class="sample"
-    *ngFor="let sample of state.samples"
-    [class.selected]="sample === state.selectedSample"
-    (click)="state.selectSample(sample)"
+    *ngFor="let sample of experiment.samples"
+    [class.selected]="sample === experiment.selectedSample"
+    (click)="experiment.selectSample(sample)"
   >
     <img [src]="'assets/images/' + sample.image" />
     <span
@@ -13,23 +13,27 @@
     ></span>
   </button>
 </div>
-<section><b>Label:</b> {{ state.selectedSample.label }}</section>
+<section><b>Label:</b> {{ experiment.selectedSample.label }}</section>
 
 <section class="actions">
   <button
     class="action"
-    *ngFor="let action of state.actions"
-    [class.selected]="action == state.selectedAction"
-    (click)="state.selectAction(action)"
+    *ngFor="let action of experiment.actions"
+    [class.selected]="action == experiment.selectedAction"
+    (click)="experiment.selectAction(action)"
   >
     {{ action }}
   </button>
 </section>
 
 <section>
-  <app-dilution *ngIf="state.selectedAction === 'Dilution'"></app-dilution>
+  <app-dilution
+    *ngIf="experiment.selectedAction === 'Dilution'"
+    [sample]="experiment.selectedSample"
+    (diluted)="onDiluted($event)"
+  ></app-dilution>
   <app-gc
-    [gc]="state.selectedSample.gc"
-    *ngIf="state.selectedAction === 'Gas Chromatography'"
+    *ngIf="experiment.selectedAction === 'Gas Chromatography'"
+    [sample]="experiment.selectedSample"
   ></app-gc>
 </section>

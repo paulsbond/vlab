@@ -5,7 +5,8 @@ import { ExperimentComponent } from './experiment/experiment.component';
 
 const routes: Routes = [
   { path: '', component: ExperimentsComponent },
-  { path: 'experiment', component: ExperimentComponent },
+  { path: ':id', component: ExperimentComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

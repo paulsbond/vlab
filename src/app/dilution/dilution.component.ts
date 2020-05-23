@@ -1,7 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { StateService } from '../state.service';
-import { decimal_places } from '../models/utils';
+import { Flask, flasks } from '../models/flask';
+import { decimal_places, random } from '../models/utils';
+import { Sample } from '../models/sample';
 
 @Component({
   selector: 'app-dilution',
@@ -9,9 +18,16 @@ import { decimal_places } from '../models/utils';
   styleUrls: ['./dilution.component.scss'],
 })
 export class DilutionComponent implements OnInit {
+  @Input() sample: Sample;
+  @Output() diluted = new EventEmitter<Sample>();
+  label: string = '';
+  volume: number = 0.1;
+  flasks: Flask[] = flasks;
+  flask: Flask = flasks[0];
+  error: string;
+
   @ViewChild('dilutionForm', { static: true }) dilutionForm: NgForm;
   formChangesSubscription: any;
-  error: string;
 
   constructor(public state: StateService) {}
   ngOnInit(): void {
@@ -37,8 +53,11 @@ export class DilutionComponent implements OnInit {
   }
 
   dilute(): void {
-    const new_sample = this.state.dilution.dilute(this.state.selectedSample);
-    this.state.samples.push(new_sample);
-    this.state.dilution.label = '';
+    const sample_volume = this.volume * random(0.99, 1.01);
+    const total_volume = this.flask.volume + random(-0.1, 0.1);
+    const percentage = this.sample.percentage * (sample_volume / total_volume);
+    const new_sample = new Sample(this.label, percentage);
+    this.label = '';
+    this.diluted.emit(new_sample);
   }
 }
