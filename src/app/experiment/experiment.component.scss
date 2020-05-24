@@ -9,6 +9,12 @@
   vertical-align: top;
 }
 
+@media print {
+  .samples {
+    display: none;
+  }
+}
+
 .samples .sample.selected {
   border: 2px #aaa dashed;
 }
