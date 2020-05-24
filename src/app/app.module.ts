@@ -6,6 +6,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ConductivityComponent } from './conductivity/conductivity.component';
 import { DilutionComponent } from './dilution/dilution.component';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
@@ -15,6 +16,7 @@ import { HplcComponent } from './hplc/hplc.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ConductivityComponent,
     DilutionComponent,
     ExperimentComponent,
     ExperimentsComponent,

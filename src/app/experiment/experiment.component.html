@@ -40,4 +40,8 @@
     *ngIf="experiment.selectedAction === 'HPLC'"
     [sample]="experiment.selectedSample"
   ></app-hplc>
+  <app-conductivity
+    *ngIf="experiment.selectedAction === 'Conductivity'"
+    [sample]="experiment.selectedSample"
+  ></app-conductivity>
 </section>

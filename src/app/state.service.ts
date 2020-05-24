@@ -23,6 +23,14 @@ export class StateService {
       ],
       ['Dilution', 'HPLC']
     ),
+    salt: new Experiment(
+      [
+        new Sample('0.5 M Aqueous NaCl', 'NaCl', 0.5, true),
+        new Sample('Food 1', 'NaCl', 0.06, true),
+        new Sample('Food 2', 'NaCl', 0.21, true),
+      ],
+      ['Dilution', 'Conductivity']
+    ),
   };
 
   constructor() {}
