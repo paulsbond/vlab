@@ -12,6 +12,6 @@ export class GcComponent implements OnInit {
   constructor(public state: StateService) {}
   ngOnInit(): void {}
   inject(): void {
-    this.sample.gc.inject(this.sample);
+    this.sample.gc.inject(this.sample, this.state.speed);
   }
 }

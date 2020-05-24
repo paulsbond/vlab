@@ -1,4 +1,6 @@
-<button (click)="inject()" [disabled]="sample.gc.running">Inject</button>
+<button (click)="inject()" [disabled]="sample.gc.running">
+  {{ sample.gc.running ? "Running" : "Inject" }}
+</button>
 
 <google-chart
   class="chart"

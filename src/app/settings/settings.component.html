@@ -1,0 +1,11 @@
+<section>
+  <label for="speed">Speed</label>
+  <select
+    id="speed"
+    name="speed"
+    (change)="onChange()"
+    [(ngModel)]="state.speed"
+  >
+    <option *ngFor="let speed of speeds" [value]="speed">{{ speed }}x</option>
+  </select>
+</section>

@@ -28,7 +28,7 @@ export class Chromatograph {
     );
   }
 
-  inject(sample: Sample): void {
+  inject(sample: Sample, speed: number): void {
     if (this._running) return;
     const gaussian = get_gaussian(sample);
     const cut_height = Math.min(gaussian.height, this.max_voltage);
@@ -55,7 +55,7 @@ export class Chromatograph {
           };
         }
       }
-    }, 10);
+    }, 1000 / speed);
   }
 }
 

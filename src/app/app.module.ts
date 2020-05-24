@@ -12,6 +12,7 @@ import { ExperimentComponent } from './experiment/experiment.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
 import { GcComponent } from './gc/gc.component';
 import { HplcComponent } from './hplc/hplc.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HplcComponent } from './hplc/hplc.component';
     ExperimentsComponent,
     GcComponent,
     HplcComponent,
+    SettingsComponent,
   ],
   imports: [
     AppRoutingModule,

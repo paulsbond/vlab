@@ -32,6 +32,7 @@ export class StateService {
       ['Dilution', 'Conductivity']
     ),
   };
+  speed = parseInt(localStorage.getItem('speed')) || 1;
 
   constructor() {}
 }

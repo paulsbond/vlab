@@ -12,6 +12,6 @@ export class HplcComponent implements OnInit {
   constructor(public state: StateService) {}
   ngOnInit(): void {}
   inject(): void {
-    this.sample.hplc.inject(this.sample);
+    this.sample.hplc.inject(this.sample, this.state.speed);
   }
 }
