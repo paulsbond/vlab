@@ -17,7 +17,7 @@ export class StateService {
     ),
     caffeine: new Experiment(
       [
-        new Sample('Caffeine (100 mg/mL)', 'caffeine', 100, true),
+        new Sample('Caffeine (85 μg/mL)', 'caffeine', 85, true),
         new Sample('Tea', 'caffeine', 20, true),
         new Sample('Coffee', 'caffeine', 60, true),
       ],
