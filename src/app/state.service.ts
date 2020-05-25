@@ -26,8 +26,11 @@ export class StateService {
     salt: new Experiment(
       [
         new Sample('0.5 M Aqueous NaCl', 'NaCl', 0.5, true),
-        new Sample('Food 1', 'NaCl', 0.06, true),
-        new Sample('Food 2', 'NaCl', 0.21, true),
+        new Sample('Cheeseburger', 'NaCl', 0.002665, true),
+        new Sample('Cheesy Chips', 'NaCl', 0.003484, true),
+        new Sample('Chicken Korma and Rice', 'NaCl', 0.0008053, true),
+        new Sample('Fish and Chips', 'NaCl', 0.001385, true),
+        new Sample('Kebab', 'NaCl', 0.004265, true),
       ],
       ['Dilution', 'Conductivity']
     ),

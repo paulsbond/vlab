@@ -14,7 +14,8 @@ export class ConductivityComponent implements OnInit {
   ngOnInit(): void {}
   read(): void {
     const conc = this.sample.conc;
-    const conductivity = 126500 * conc - 101265 * conc ** 1.5;
-    this.sample.conductivity = conductivity * random(0.995, 1.005);
+    const raw = (126500 * conc - 101265 * conc ** 1.5) * random(0.995, 1.005);
+    const rounded = Math.round(raw);
+    this.sample.conductivity = rounded > 9999 ? 'HIGH' : rounded;
   }
 }
