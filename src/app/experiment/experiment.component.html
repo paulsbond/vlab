@@ -1,19 +1,38 @@
 <div class="samples">
-  <button
-    class="sample"
-    *ngFor="let sample of experiment.samples"
-    [class.selected]="sample === experiment.selectedSample"
-    (click)="experiment.selectSample(sample)"
-  >
-    <img [src]="'assets/images/' + sample.image" />
-    <span
-      class="label"
-      [contenteditable]="!sample.supplied"
-      [(ngModel)]="sample.label"
-    ></span>
-  </button>
+  <h2>Supplied Samples</h2>
+  <ng-container *ngFor="let sample of experiment.samples">
+    <button
+      *ngIf="sample.supplied"
+      class="sample supplied"
+      [class.selected]="sample === experiment.selectedSample"
+      (click)="experiment.selectSample(sample)"
+    >
+      {{ sample.label }}
+    </button>
+  </ng-container>
+  <ng-container *ngIf="anyDiluted">
+    <h2>Diluted Samples</h2>
+    <ng-container *ngFor="let sample of experiment.samples">
+      <button
+        *ngIf="!sample.supplied"
+        class="sample"
+        [class.selected]="sample === experiment.selectedSample"
+        (click)="experiment.selectSample(sample)"
+      >
+        {{ sample.label }}
+      </button>
+    </ng-container>
+  </ng-container>
 </div>
-<section><b>Label:</b> {{ experiment.selectedSample.label }}</section>
+
+<section class="details">
+  <img [src]="'assets/images/' + experiment.selectedSample.image" />
+  <span
+    class="label"
+    [contenteditable]="!experiment.selectedSample.supplied"
+    [(ngModel)]="experiment.selectedSample.label"
+  ></span>
+</section>
 
 <section class="actions">
   <button
