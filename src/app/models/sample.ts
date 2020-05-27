@@ -9,7 +9,7 @@ export class Sample {
     public label: string,
     public compound: string,
     public conc: number,
-    public supplied: boolean = false,
+    public type: string = 'dilution',
     public image: string = 'vial.png'
   ) {}
 }

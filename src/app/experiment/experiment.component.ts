@@ -11,7 +11,6 @@ import { Sample } from '../models/sample';
 })
 export class ExperimentComponent implements OnInit {
   experiment: Experiment;
-  anyDiluted: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +22,6 @@ export class ExperimentComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if (id in this.state.experiments) {
       this.experiment = this.state.experiments[id];
-      this.anyDiluted = this.experiment.samples.some((x) => !x.supplied);
     } else {
       this.router.navigate(['/']);
     }
@@ -31,6 +29,5 @@ export class ExperimentComponent implements OnInit {
 
   onDiluted(sample: Sample) {
     this.experiment.samples.push(sample);
-    this.anyDiluted = true;
   }
 }
