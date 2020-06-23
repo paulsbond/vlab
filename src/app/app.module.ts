@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ContenteditableModule } from '@ng-stack/contenteditable';
 import { FormsModule } from '@angular/forms';
 import { GoogleChartsModule } from 'angular-google-charts';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -32,7 +31,6 @@ import { SettingsComponent } from './settings/settings.component';
     ContenteditableModule,
     FormsModule,
     GoogleChartsModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

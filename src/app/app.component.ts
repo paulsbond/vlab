@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ConfigService } from './config.service';
+import config from './config.json';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,8 @@ import { ConfigService } from './config.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(public config: ConfigService) {}
+  title = config.title;
+  footer = config.footer;
+  constructor() {}
   ngOnInit() {}
 }
