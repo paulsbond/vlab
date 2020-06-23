@@ -49,6 +49,10 @@
   transform: translate(-50%, -50%);
 }
 
+.details .label[contenteditable="false"] {
+  cursor: default;
+}
+
 button.action {
   background-color: #eee;
   border: none;
