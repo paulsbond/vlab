@@ -14,6 +14,8 @@ import { GcComponent } from './gc/gc.component';
 import { HplcComponent } from './hplc/hplc.component';
 import { SettingsComponent } from './settings/settings.component';
 
+import { ImageUrlPipe } from './image-url.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,7 @@ import { SettingsComponent } from './settings/settings.component';
     GcComponent,
     HplcComponent,
     SettingsComponent,
+    ImageUrlPipe,
   ],
   imports: [
     AppRoutingModule,

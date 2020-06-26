@@ -1,3 +1,8 @@
-<a class="alcohol" routerLink="/alcohol"><span>Alcohol</span></a>
-<a class="caffeine" routerLink="/caffeine"><span>Caffeine</span></a>
-<a class="salt" routerLink="/salt"><span>Salt</span></a>
+<ng-container *ngFor="let experiment of experiments | keyvalue">
+  <a
+    routerLink="{{ experiment.key }}"
+    [ngStyle]="{ 'background-image': experiment.value.image | imageUrl }"
+  >
+    <span>{{ experiment.value.name }}</span>
+  </a>
+</ng-container>

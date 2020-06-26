@@ -1,4 +1,18 @@
 {
   "title": "V-Lab",
-  "footer": "Department of Chemistry - University of York"
+  "footer": "Department of Chemistry - University of York",
+  "experiments": {
+    "alcohol": {
+      "name": "Alcohol",
+      "image": "alcohol.jpg"
+    },
+    "caffeine": {
+      "name": "Caffeine",
+      "image": "caffeine.jpg"
+    },
+    "salt": {
+      "name": "Salt",
+      "image": "salt.jpg"
+    }
+  }
 }
