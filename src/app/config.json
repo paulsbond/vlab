@@ -4,15 +4,264 @@
   "experiments": {
     "alcohol": {
       "name": "Alcohol",
-      "image": "alcohol.jpg"
+      "image": "alcohol.jpg",
+      "actions": [
+        "Dilution",
+        "Gas Chromatography"
+      ],
+      "samples": [
+        {
+          "label": "Ethanol 100%",
+          "compound": "ethanol",
+          "conc": 100,
+          "type": "stock",
+          "image": "ethanol.png"
+        },
+        {
+          "label": "Lager",
+          "compound": "ethanol",
+          "conc": 2.9,
+          "type": "unknown",
+          "image": "pint.png"
+        },
+        {
+          "label": "IPA",
+          "compound": "ethanol",
+          "conc": 4.6,
+          "type": "unknown",
+          "image": "pint.png"
+        },
+        {
+          "label": "Stout",
+          "compound": "ethanol",
+          "conc": 3.6,
+          "type": "unknown",
+          "image": "pint.png"
+        },
+        {
+          "label": "Cider",
+          "compound": "ethanol",
+          "conc": 5.3,
+          "type": "unknown",
+          "image": "pint.png"
+        },
+        {
+          "label": "Shiraz",
+          "compound": "ethanol",
+          "conc": 14.2,
+          "type": "unknown",
+          "image": "wine.png"
+        },
+        {
+          "label": "Sauvignon Blanc",
+          "compound": "ethanol",
+          "conc": 13.6,
+          "type": "unknown",
+          "image": "wine.png"
+        },
+        {
+          "label": "Cabernet Sauvignon",
+          "compound": "ethanol",
+          "conc": 12.4,
+          "type": "unknown",
+          "image": "wine.png"
+        },
+        {
+          "label": "Pinot Grigio",
+          "compound": "ethanol",
+          "conc": 13.9,
+          "type": "unknown",
+          "image": "wine.png"
+        },
+        {
+          "label": "Gin",
+          "compound": "ethanol",
+          "conc": 37.5,
+          "type": "unknown",
+          "image": "spirit.png"
+        },
+        {
+          "label": "Vodka",
+          "compound": "ethanol",
+          "conc": 40.2,
+          "type": "unknown",
+          "image": "spirit.png"
+        },
+        {
+          "label": "Whisky",
+          "compound": "ethanol",
+          "conc": 38.5,
+          "type": "unknown",
+          "image": "spirit.png"
+        },
+        {
+          "label": "Tequila",
+          "compound": "ethanol",
+          "conc": 36.4,
+          "type": "unknown",
+          "image": "spirit.png"
+        },
+        {
+          "label": "Rum & Coke",
+          "compound": "ethanol",
+          "conc": 4.2,
+          "type": "unknown",
+          "image": "mixer.png"
+        },
+        {
+          "label": "Gin & Tonic",
+          "compound": "ethanol",
+          "conc": 9.7,
+          "type": "unknown",
+          "image": "mixer.png"
+        },
+        {
+          "label": "Vodka & Diet Coke",
+          "compound": "ethanol",
+          "conc": 7.4,
+          "type": "unknown",
+          "image": "mixer.png"
+        },
+        {
+          "label": "Schnapps & Lemonade",
+          "compound": "ethanol",
+          "conc": 6.7,
+          "type": "unknown",
+          "image": "mixer.png"
+        }
+      ]
     },
     "caffeine": {
       "name": "Caffeine",
-      "image": "caffeine.jpg"
+      "image": "caffeine.jpg",
+      "actions": [
+        "Dilution",
+        "HPLC"
+      ],
+      "samples": [
+        {
+          "label": "Caffeine 100 μg/mL",
+          "compound": "caffeine",
+          "conc": 100,
+          "type": "stock",
+          "image": "vol100.png"
+        },
+        {
+          "label": "Builders Tea",
+          "compound": "caffeine",
+          "conc": 281.25,
+          "type": "unknown",
+          "image": "tea.png"
+        },
+        {
+          "label": "Expresso Coffee",
+          "compound": "caffeine",
+          "conc": 825.0,
+          "type": "unknown",
+          "image": "coffee.png"
+        },
+        {
+          "label": "Americano",
+          "compound": "caffeine",
+          "conc": 307.5,
+          "type": "unknown",
+          "image": "coffee.png"
+        },
+        {
+          "label": "Decaf Tea",
+          "compound": "caffeine",
+          "conc": 18.75,
+          "type": "unknown",
+          "image": "tea.png"
+        },
+        {
+          "label": "Decaf Americano",
+          "compound": "caffeine",
+          "conc": 13.89,
+          "type": "unknown",
+          "image": "coffee.png"
+        },
+        {
+          "label": "Green Tea",
+          "compound": "caffeine",
+          "conc": 246.53,
+          "type": "unknown",
+          "image": "tea.png"
+        },
+        {
+          "label": "Earl Grey",
+          "compound": "caffeine",
+          "conc": 166.67,
+          "type": "unknown",
+          "image": "tea.png"
+        },
+        {
+          "label": "Everyday Tea",
+          "compound": "caffeine",
+          "conc": 106.25,
+          "type": "unknown",
+          "image": "tea.png"
+        },
+        {
+          "label": "Latte",
+          "compound": "caffeine",
+          "conc": 197.92,
+          "type": "unknown",
+          "image": "coffee.png"
+        }
+      ]
     },
     "salt": {
       "name": "Salt",
-      "image": "salt.jpg"
+      "image": "salt.jpg",
+      "actions": [
+        "Dilution",
+        "Conductivity"
+      ],
+      "samples": [
+        {
+          "label": "0.5 M Aqueous NaCl",
+          "compound": "NaCl",
+          "conc": 0.5,
+          "type": "stock",
+          "image": "vol250.png"
+        },
+        {
+          "label": "Cheeseburger",
+          "compound": "NaCl",
+          "conc": 0.002665,
+          "type": "unknown",
+          "image": "burger.png"
+        },
+        {
+          "label": "Cheesy Chips",
+          "compound": "NaCl",
+          "conc": 0.003484,
+          "type": "unknown",
+          "image": "chips.png"
+        },
+        {
+          "label": "Chicken Korma and Rice",
+          "compound": "NaCl",
+          "conc": 0.0008053,
+          "type": "unknown",
+          "image": "curry.png"
+        },
+        {
+          "label": "Fish and Chips",
+          "compound": "NaCl",
+          "conc": 0.001385,
+          "type": "unknown",
+          "image": "fish.png"
+        },
+        {
+          "label": "Kebab",
+          "compound": "NaCl",
+          "conc": 0.004265,
+          "type": "unknown",
+          "image": "kebab.png"
+        }
+      ]
     }
   }
 }
