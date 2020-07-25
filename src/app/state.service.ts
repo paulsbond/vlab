@@ -15,7 +15,7 @@ export class StateService {
       const samples = experiment.samples.map(
         (s) => new Sample(s.label, s.compound, s.conc, s.type, s.image)
       );
-      const actions = ['Dilution'].concat(Object.keys(experiment.actions));
+      const actions = experiment.actions;
       this.experiments[experimentId] = new Experiment(samples, actions);
     }
   }

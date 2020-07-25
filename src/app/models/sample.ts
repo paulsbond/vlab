@@ -1,8 +1,8 @@
 import { Chromatograph } from './chromatograph';
 
 export class Sample {
-  gc = new Chromatograph(180, 50, 1000);
-  hplc = new Chromatograph(360, 15, 1200);
+  gc = new Chromatograph('Gas Chromatography', 180, 50, 1000);
+  hplc = new Chromatograph('HPLC', 360, 15, 1200);
   conductivity: number | string = '-';
 
   constructor(

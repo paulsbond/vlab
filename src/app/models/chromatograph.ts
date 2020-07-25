@@ -2,6 +2,7 @@ import { Chart } from './chart';
 import { Gaussian } from './gaussian';
 import { Sample } from './sample';
 import { random } from './utils';
+import config from '../config.json';
 
 export class Chromatograph {
   private _running: boolean = false;
@@ -14,23 +15,17 @@ export class Chromatograph {
   }
 
   constructor(
+    private action: string,
     private runtime: number,
     private min_voltage: number,
     private max_voltage: number
   ) {
-    this.chart = new Chart(
-      'Time / s',
-      'Voltage / mV',
-      0,
-      runtime,
-      -20,
-      max_voltage
-    );
+    this.chart = new Chart('Time / s', 'Voltage / mV', 0, runtime, -20, max_voltage);
   }
 
   inject(sample: Sample, speed: number): void {
     if (this._running) return;
-    const gaussian = get_gaussian(sample);
+    const gaussian = get_gaussian(sample, this.action);
     const cut_height = Math.min(gaussian.height, this.max_voltage);
     let area = 0;
     let time = 0;
@@ -59,18 +54,13 @@ export class Chromatograph {
   }
 }
 
-function get_gaussian(sample: Sample): Gaussian {
-  if (sample.compound === 'ethanol') {
-    const height = ((sample.conc * 1000) / 5.2) * random(0.995, 1.005);
-    const position = 120 * random(0.995, 1.005);
-    const sd = 5 * random(0.995, 1.005);
-    return new Gaussian(height, position, sd);
-  } else if (sample.compound === 'caffeine') {
-    const height = ((sample.conc * 1200) / 85) * random(0.995, 1.005);
-    const position = 240 * random(0.995, 1.005);
-    const sd = 2.5 * random(0.995, 1.005);
-    return new Gaussian(height, position, sd);
-  }
+function get_gaussian(sample: Sample, action: string): Gaussian {
+  const ref = config.compounds[sample.compound][action];
+  console.log(ref);
+  const height = ((sample.conc * ref.height) / ref.conc) * random(0.995, 1.005);
+  const position = ref.position * random(0.995, 1.005);
+  const sd = ref.sd * random(0.995, 1.005);
+  return new Gaussian(height, position, sd);
 }
 
 export class Result {
