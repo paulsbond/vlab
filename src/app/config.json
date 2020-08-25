@@ -31,6 +31,23 @@
     }
   },
   "experiments": {
+    "kmno4": {
+      "name": "KMnO4",
+      "image": "vial.png",
+      "actions": [
+        "Dilution",
+        "UV-Vis"
+      ],
+      "samples": [
+        {
+          "label": "KMnO4 5.00E-4 Molar",
+          "compound": "KMnO4",
+          "conc": 0.0005,
+          "type": "stock",
+          "image": "vial.png"
+        }
+      ]
+    },
     "alcohol": {
       "name": "Alcohol",
       "image": "alcohol.jpg",
