@@ -50,4 +50,8 @@
     *ngIf="experiment.selectedAction === 'Conductivity'"
     [sample]="experiment.selectedSample"
   ></app-conductivity>
+  <app-uvvis
+    *ngIf="experiment.selectedAction === 'UV-Vis'"
+    [sample]="experiment.selectedSample"
+  ></app-uvvis>
 </section>

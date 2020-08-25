@@ -15,6 +15,7 @@ import { HplcComponent } from './hplc/hplc.component';
 import { SettingsComponent } from './settings/settings.component';
 
 import { ImageUrlPipe } from './image-url.pipe';
+import { UvvisComponent } from './uvvis/uvvis.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ImageUrlPipe } from './image-url.pipe';
     HplcComponent,
     SettingsComponent,
     ImageUrlPipe,
+    UvvisComponent,
   ],
   imports: [
     AppRoutingModule,
