@@ -1,7 +1,7 @@
 import { Sample } from './sample';
 import { Chart } from './chart';
 
-export class UvVisSpectrometer {
+export class UvVis {
   private _min_nm: number = 200;
   private _max_nm: number = 600;
   private _nm_per_second: number = 10;
@@ -9,7 +9,7 @@ export class UvVisSpectrometer {
   private _running: boolean = false;
   private _interval;
 
-  public chart: Chart = new Chart('Wavelength / nm', 'Absorbance', 1, 1);
+  public chart: Chart = new Chart('Wavelength / nm', 'Absorbance', 190, 1100, -0.1, 2);
 
   public get running(): boolean {
     return this._running;
