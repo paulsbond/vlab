@@ -1,3 +1,7 @@
+<button (click)="startStop()">
+  {{ sample.uvvis.running ? "Stop" : "Start" }}
+</button>
+
 <google-chart
   class="chart"
   [type]="sample.uvvis.chart.type"

@@ -2,8 +2,8 @@ import { Sample } from './sample';
 import { Chart } from './chart';
 
 export class UvVis {
-  private _min_nm: number = 200;
-  private _max_nm: number = 600;
+  private _min_nm: number = 190;
+  private _max_nm: number = 1100;
   private _nm_per_second: number = 10;
   private _nm: number;
   private _running: boolean = false;
@@ -17,7 +17,7 @@ export class UvVis {
 
   constructor() {}
 
-  start(sample: Sample): void {
+  start(sample: Sample, speed: number): void {
     if (this._running) return;
     this._nm = this._min_nm;
     this._running = true;
@@ -26,7 +26,7 @@ export class UvVis {
       this.chart.add_point(this._nm, absorbance);
       this._nm += this._nm_per_second;
       if (this._nm > this._max_nm) this.stop();
-    }, 10);
+    }, 1000 / speed);
   }
 
   stop(): void {
