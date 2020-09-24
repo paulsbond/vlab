@@ -24,7 +24,7 @@ export class Chart {
   constructor(
     xlabel: string,
     ylabel: string,
-    xmin: number,
+    private xmin: number,
     xmax: number,
     ymin: number,
     ymax: number
@@ -38,7 +38,7 @@ export class Chart {
   }
 
   add_point(x: number, y: number) {
-    if (x === 0) {
+    if (x === this.xmin) {
       this.data = [[x, y]];
     } else {
       this.data = [...this.data, [x, y]];

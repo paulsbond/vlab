@@ -1,6 +1,7 @@
-<button (click)="startStop()">
-  {{ sample.uvvis.running ? "Stop" : "Start" }}
+<button (click)="startPause()">
+  {{ sample.uvvis.running ? "Pause" : "Start" }}
 </button>
+<button (click)="reset()">Reset</button>
 
 <google-chart
   class="chart"

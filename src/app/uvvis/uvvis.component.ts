@@ -11,12 +11,15 @@ export class UvvisComponent implements OnInit {
   @Input() sample: Sample;
   constructor(public state: StateService) { }
   ngOnInit(): void {}
-  startStop(): void {
+  startPause(): void {
     if (this.sample.uvvis.running) {
-      this.sample.uvvis.stop();
+      this.sample.uvvis.pause();
     }
     else {
-      this.sample.uvvis.start(this.sample, this.state.speed)
+      this.sample.uvvis.start(this.sample, this.state.speed);
     }
+  }
+  reset(): void {
+    this.sample.uvvis.reset();
   }
 }
