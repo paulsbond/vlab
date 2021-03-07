@@ -1,7 +1,67 @@
-<button (click)="startPause()">
-  {{ sample.uvvis.running ? "Pause" : "Start" }}
-</button>
-<button (click)="reset()">Reset</button>
+<form (ngSubmit)="sample.uvvis.read(sample)" #readForm="ngForm">
+  <label for="wavelength">Wavelength / nm</label>
+  <input
+    id="wavelength"
+    name="wavelength"
+    type="number"
+    step="0.1"
+    min="190"
+    max="1100"
+    placeholder="Wavelength"
+    [(ngModel)]="sample.uvvis.read_nm"
+    required
+  />
+  <button type="submit" [disabled]="readFormError">
+    {{ readFormError || "Read" }}
+  </button>
+</form>
+
+<p class="digital">{{ sample.uvvis.read_abs | number : '1.4' }}</p>
+
+<form (ngSubmit)="scanStop()" #scanForm="ngForm">
+  <label for="min_nm">Min Wavelength / nm</label>
+  <input
+    id="min_nm"
+    name="min_nm"
+    type="number"
+    step="0.1"
+    min="190"
+    max="1100"
+    placeholder="Min Wavelength"
+    [(ngModel)]="sample.uvvis.min_nm"
+    [disabled]="sample.uvvis.running"
+    required
+    />
+  <label for="max_nm">Max Wavelength / nm</label>
+  <input
+    id="max_nm"
+    name="max_nm"
+    type="number"
+    step="0.1"
+    min="190"
+    max="1100"
+    placeholder="Max Wavelength"
+    [(ngModel)]="sample.uvvis.max_nm"
+    [disabled]="sample.uvvis.running"
+    required
+    />
+  <label for="nm_per_s">Scanning Speed / nm s<sup>-1</sup></label>
+  <input
+    id="nm_per_s"
+    name="nm_per_s"
+    type="number"
+    step="0.1"
+    min="0.1"
+    max="100"
+    placeholder="Scanning Speed"
+    [(ngModel)]="sample.uvvis.nm_per_s"
+    [disabled]="sample.uvvis.running"
+    required
+  />
+  <button type="submit" [disabled]="scanFormError">
+    {{ scanFormError || (sample.uvvis.running ? "Stop" : "Scan") }}
+  </button>
+</form>
 
 <google-chart
   class="chart"

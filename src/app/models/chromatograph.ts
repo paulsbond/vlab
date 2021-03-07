@@ -25,6 +25,7 @@ export class Chromatograph {
 
   inject(sample: Sample, speed: number): void {
     if (this._running) return;
+    this.chart.reset();
     const gaussian = get_gaussian(sample, this.action);
     const cut_height = Math.min(gaussian.height, this.max_voltage);
     let area = 0;
