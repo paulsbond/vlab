@@ -26,6 +26,8 @@ export class UvVis {
 
   scan(sample: Sample, speed: number): void {
     if (this._running) return;
+    this.chart.options.hAxis.viewWindow.min = this.min_nm;
+    this.chart.options.hAxis.viewWindow.max = this.max_nm;
     this.chart.reset();
     let scan_nm = this.min_nm;
     this._running = true;

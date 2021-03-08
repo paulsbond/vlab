@@ -57,7 +57,6 @@ export class UvvisComponent implements OnInit {
         } else if (values.max_nm < values.min_nm + values.nm_per_s) {
           this.scanFormError = "Invalid settings";
         } else {
-          this.sample.uvvis.chart.change_haxis(values.min_nm, values.max_nm);
           this.scanFormError = "";
         }
       }

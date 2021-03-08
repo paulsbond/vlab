@@ -66,11 +66,6 @@ export class Chart {
     return this.data.length > 1 || this.data[0][0] !== 0 || this.data[0][1] !== 0;
   }
 
-  change_haxis(min: number, max: number) {
-    this.options.hAxis.viewWindow.min = min;
-    this.options.hAxis.viewWindow.max = max;
-  }
-
   reset() {
     this.data = [[0, 0]];
     this.options.vAxis.viewWindow.min = this._ymin;
