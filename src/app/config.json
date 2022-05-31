@@ -33,7 +33,7 @@
   "experiments": {
     "kmno4": {
       "name": "KMnO4",
-      "image": "vial.png",
+      "image": "kmno4.png",
       "actions": [
         "Dilution",
         "UV-Vis"
