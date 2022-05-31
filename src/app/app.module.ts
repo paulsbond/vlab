@@ -13,9 +13,10 @@ import { ExperimentsComponent } from './experiments/experiments.component';
 import { GcComponent } from './gc/gc.component';
 import { HplcComponent } from './hplc/hplc.component';
 import { SettingsComponent } from './settings/settings.component';
+import { UvvisFixedComponent } from './uvvis-fixed/uvvis-fixed.component';
+import { UvvisScanningComponent } from './uvvis-scanning/uvvis-scanning.component';
 
 import { ImageUrlPipe } from './image-url.pipe';
-import { UvvisComponent } from './uvvis/uvvis.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,10 @@ import { UvvisComponent } from './uvvis/uvvis.component';
     ExperimentsComponent,
     GcComponent,
     HplcComponent,
-    SettingsComponent,
     ImageUrlPipe,
-    UvvisComponent,
+    SettingsComponent,
+    UvvisFixedComponent,
+    UvvisScanningComponent
   ],
   imports: [
     AppRoutingModule,

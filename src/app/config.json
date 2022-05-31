@@ -36,7 +36,8 @@
       "image": "kmno4.png",
       "actions": [
         "Dilution",
-        "UV-Vis"
+        "UV-Vis (Fixed)",
+        "UV-Vis (Scanning)"
       ],
       "samples": [
         {
