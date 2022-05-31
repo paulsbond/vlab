@@ -1,27 +1,13 @@
-# Vlab
+# V-Lab
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+- Run `npm install` after cloning the repository to install dependencies.
 
-## First setup
+- Run `ng serve --open` to start a development server
+  and open `http://localhost:4200/` in the default browser.
+  The app will automatically reload if you change any of the source files.
 
-After cloning run `npm install`.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Deploy
-
-Run `ng build --prod --output-path docs --base-href /vlab/` to build the project to the docs folder. The `--base-href` flag makes the links work for the deployed environment. Make a copy of `docs/index.html` and name it `docs/404.html`. Commit changes and push to the master branch.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Run `ng build --prod --output-path docs --base-href /vlab/`
+  to build the project and put the output in the docs folder.
+  The `--base-href` flag makes the links work for the deployed environment.
+  Make a copy of `docs/index.html` at `docs/404.html`
+  and commit changes and push to the master branch to publish the changes.
