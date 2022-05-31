@@ -280,11 +280,25 @@
           "image": "burger.png"
         },
         {
-          "label": "Cheesy Chips",
+          "label": "Chips",
           "compound": "NaCl",
-          "conc": 0.003484,
+          "conc": 0.0005557,
           "type": "unknown",
           "image": "chips.png"
+        },
+        {
+          "label": "Margherita Pizza",
+          "compound": "NaCl",
+          "conc": 0.001096,
+          "type": "unknown",
+          "image": "margherita.png"
+        },
+        {
+          "label": "Pepperoni Pizza",
+          "compound": "NaCl",
+          "conc": 0.001071,
+          "type": "unknown",
+          "image": "pepperoni.png"
         },
         {
           "label": "Chicken Korma and Rice",
@@ -292,20 +306,6 @@
           "conc": 0.0008053,
           "type": "unknown",
           "image": "curry.png"
-        },
-        {
-          "label": "Fish and Chips",
-          "compound": "NaCl",
-          "conc": 0.001385,
-          "type": "unknown",
-          "image": "fish.png"
-        },
-        {
-          "label": "Kebab",
-          "compound": "NaCl",
-          "conc": 0.004265,
-          "type": "unknown",
-          "image": "kebab.png"
         }
       ]
     }
