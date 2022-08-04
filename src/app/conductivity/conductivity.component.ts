@@ -2,8 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Sample } from '../models/sample';
 import { StateService } from '../state.service';
 import { random } from '../models/utils';
-import { evaluate } from 'mathjs';
-import config from '../config.json';
 
 @Component({
   selector: 'app-conductivity',
@@ -12,12 +10,11 @@ import config from '../config.json';
 })
 export class ConductivityComponent implements OnInit {
   @Input() sample: Sample;
-  constructor(public state: StateService) {}
-  ngOnInit(): void {}
+  constructor(public state: StateService) { }
+  ngOnInit(): void { }
   read(): void {
     const conc = this.sample.conc;
-    const func = config.compounds[this.sample.compound]['Conductivity'].func;
-    const raw = evaluate(func, { x: conc }) * random(0.995, 1.005);
+    const raw = 126500 * conc - 101265 * conc ** 1.5 * random(0.995, 1.005);
     const rounded = Math.round(raw);
     this.sample.conductivity = rounded > 9999 ? 'HIGH' : rounded;
   }

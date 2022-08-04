@@ -2,7 +2,6 @@ import { Chart } from './chart';
 import { Gaussian } from './gaussian';
 import { Sample } from './sample';
 import { random } from './utils';
-import config from '../config.json';
 
 export class Chromatograph {
   private _running: boolean = false;
@@ -56,7 +55,7 @@ export class Chromatograph {
 }
 
 function get_gaussian(sample: Sample, action: string): Gaussian {
-  const ref = config.compounds[sample.compound][action];
+  const ref = refs[sample.compound][action];
   console.log(ref);
   const height = ((sample.conc * ref.height) / ref.conc) * random(0.995, 1.005);
   const position = ref.position * random(0.995, 1.005);
@@ -70,3 +69,23 @@ export class Result {
   height: number;
   fwhm: number;
 }
+
+
+const refs = {
+  "ethanol": {
+    "Gas Chromatography": {
+      "conc": 5.2,
+      "height": 1000,
+      "position": 120,
+      "sd": 5
+    }
+  },
+  "caffeine": {
+    "HPLC": {
+      "conc": 85,
+      "height": 1200,
+      "position": 240,
+      "sd": 2.5
+    }
+  }
+};

@@ -10,6 +10,22 @@ a {
   width: 200px;
 }
 
+.alcohol {
+  background-image: url("/assets/images/alcohol.jpg");
+}
+
+.caffeine {
+  background-image: url("/assets/images/caffeine.jpg");
+}
+
+.salt {
+  background-image: url("/assets/images/salt.jpg");
+}
+
+.kmno4 {
+  background-image: url("/assets/images/kmno4.png");
+}
+
 span {
   background-color: rgba($color: #000000, $alpha: 0.5);
   color: #fff;
