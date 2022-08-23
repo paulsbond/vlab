@@ -58,4 +58,8 @@
     *ngIf="experiment.selectedAction === 'UV-Vis (Scanning)'"
     [sample]="experiment.selectedSample"
   ></app-uvvis-scanning>
+  <app-cv
+    *ngIf="experiment.selectedAction === 'Cyclic Voltammetry'"
+    [sample]="experiment.selectedSample"
+  ></app-cv>
 </section>

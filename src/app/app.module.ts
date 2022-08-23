@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ConductivityComponent } from './conductivity/conductivity.component';
+import { CvComponent } from './cv/cv.component';
 import { DilutionComponent } from './dilution/dilution.component';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
@@ -22,6 +23,7 @@ import { ImageUrlPipe } from './image-url.pipe';
   declarations: [
     AppComponent,
     ConductivityComponent,
+    CvComponent,
     DilutionComponent,
     ExperimentComponent,
     ExperimentsComponent,
