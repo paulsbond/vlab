@@ -11,6 +11,7 @@ import { CvComponent } from './cv/cv.component';
 import { DilutionComponent } from './dilution/dilution.component';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
+import { FerroceneComponent } from './ferrocene/ferrocene.component';
 import { GcComponent } from './gc/gc.component';
 import { HplcComponent } from './hplc/hplc.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -27,6 +28,7 @@ import { ImageUrlPipe } from './image-url.pipe';
     DilutionComponent,
     ExperimentComponent,
     ExperimentsComponent,
+    FerroceneComponent,
     GcComponent,
     HplcComponent,
     ImageUrlPipe,
