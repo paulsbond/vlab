@@ -8,6 +8,14 @@ import { Chart } from '../models/chart';
 })
 export class FerroceneComponent implements OnInit {
   public chart: Chart;
+  public ferrocene_volume: number;
+  public liclo4_volume: number;
+  public material: string = 'Pt QRE';
+  public scan_rate: number = 200;
+  public min_voltage: number = -0.5;
+  public max_voltage: number = 0.6;
+  public formError: string;
+  public running: boolean = false;
 
   constructor() {
     this.chart = new Chart('E (V)', 'Current (I)/A', -0.5, 0.6, -4E-6, 8E-6);
@@ -2220,6 +2228,16 @@ export class FerroceneComponent implements OnInit {
       [0.599218249, 5.85746E-06],
       [0.59939009, 5.85794E-06],
     ];
+
+
+  }
+
+  startStop(): void {
+    this.running = !this.running;
+  }
+
+  runTime(): number {
+    return 1;
   }
 
   ngOnInit(): void { }
